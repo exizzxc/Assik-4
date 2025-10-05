@@ -1,0 +1,127 @@
+/* ---------- Base / Variables ---------- */
+:root{
+  --brand: #0d6efd; /* bootstrap primary blue */
+  --muted: #6c757d;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+/* Global reset & base typography */
+*{box-sizing:border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  color:#222;
+  background: #f8f9fb;
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Container presentation */
+.container{ max-width:var(--max-width); margin-left:auto; margin-right:auto; padding:0 1rem; }
+
+/* Logo small box */
+.logo-box{
+  width:36px; height:36px; border-radius:8px;
+  display:inline-block; background:linear-gradient(135deg,var(--brand), #6ea8ff);
+  box-shadow: 0 2px 6px rgba(13,110,253,0.12);
+}
+
+/* Section titles */
+.section-title{ font-size:1.25rem; margin-bottom:0.5rem; color:var(--brand); }
+
+/* muted */
+.muted{ color:var(--muted); }
+
+/* Card baseline */
+.card{ border-radius:12px; }
+
+/* ====== Task0 — responsive typography classes ====== */
+.resp-h1{ font-size:2rem; margin-bottom:0.25rem; }
+.resp-h2{ font-size:1.25rem; margin-bottom:0.5rem; color:var(--muted); }
+.resp-p{ font-size:1rem; }
+
+/* ====== Task1 — pure CSS grid (NO bootstrap layout) ====== */
+.pure-grid{
+  display:flex;
+  gap:1rem;
+  justify-content:space-between;
+  align-items:stretch;
+  margin-top:1rem;
+}
+/* each box baseline */
+.pure-box{
+  background:linear-gradient(180deg,#ffffff, #f1f5ff);
+  border-radius:12px;
+  padding:1.25rem;
+  flex:1 1 0;
+  text-align:center;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  min-height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+}
+
+/* ====== Task2/Task4 small helpers ====== */
+.project-card img, .card-img-top{ border-top-left-radius:12px; border-top-right-radius:12px; object-fit:cover; height:300px; width:100%; }
+@media (min-width:992px){
+  .project-card img, .card-img-top{ height:180px; }
+}
+
+/* make sidebar sticky on large */
+@media (min-width:992px){
+  .sticky-sidebar{ position: sticky; top:90px; }
+}
+
+/* small code note */
+.code-note{ background:#fff; border-radius:8px; padding:0.5rem; border:1px solid #eef3ff; }
+
+/* ====== Media Queries (breakpoints) ====== */
+
+/* MOBILE first baseline: small screens (<=599px) */
+@media (max-width:599px){
+  .resp-h1{ font-size:1.5rem; }
+  .resp-h2{ font-size:1rem; }
+  .resp-p{ font-size:0.95rem; }
+
+  /* pure-grid -> stack vertically */
+  .pure-grid{ flex-direction:column; }
+  .pure-box{ width:100%; }
+
+  /* portfolio: cards stacked */
+  .project-card img{ height:200px; }
+
+  /* navbar small adjustments */
+  .navbar .navbar-brand{ font-size:1rem; }
+}
+
+/* TABLET: 600px - 991px */
+@media (min-width:600px) and (max-width:991px){
+  .resp-h1{ font-size:1.9rem; }
+  .resp-h2{ font-size:1.15rem; }
+  .resp-p{ font-size:1rem; }
+
+  /* pure-grid -> two in row: use wrap with flex-basis 48% */
+  .pure-grid{ flex-wrap:wrap; }
+  .pure-box{ flex: 0 0 48%; }
+
+  /* projects: cards grid handled by bootstrap col-sm */
+  .project-card img{ height:220px; }
+}
+
+/* DESKTOP: >= 992px */
+@media (min-width:992px){
+  .resp-h1{ font-size:2.4rem; }
+  .resp-h2{ font-size:1.2rem; }
+  .resp-p{ font-size:1.05rem; }
+
+  /* pure-grid -> three in row: set equal flex children */
+  .pure-grid{ flex-direction:row; }
+  .pure-box{ flex: 1 1 0; }
+
+  /* card images taller on desktop */
+  .project-card img{ height:240px; }
+}

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment #4 — Responsive Web Design</title>
+
+  <!-- Bootstrap 5.3 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Simple favicon color mark -->
+  <style> :root { --brand:#0d6efd; } </style>
+</head>
+<body>
+
+  <!-- ====== Header / Navbar (Task 3 & part of Task4 header) ====== -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="eCommerce-logo-removebg-preview.png" alt="Logo" width="40" height="40" class="me-2">
+          <span class="fw-semibold">MyPortfolio</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#task4">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#task2">Grid</a></li>
+            <li class="nav-item"><a class="nav-link" href="#task1">Media Queries</a></li>
+            <li class="nav-item"><a class="nav-link" href="#task0">Typography</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn btn-outline-primary" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mt-5">
+
+    <!-- ====== Task 0 — Responsive Typography ====== -->
+    <section id="task0" class="container mb-5">
+      <h2 class="section-title">Task 0 — Responsive Typography</h2>
+      <div class="card p-4">
+        <h1 class="resp-h1">There should be smth special like title idk</h1>
+        <h2 class="resp-h2">and there any subtitle</h2>
+        <p class="resp-p">
+          This is an example paragraph. It shows how fonts adapt for mobile, tablet, and desktop devices using media queries. 
+          The fonts use relative units (rem) for better scalability.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====== Task 1 — Responsive Layout with Media Queries (NO Bootstrap for layout) ====== -->
+    <section id="task1" class="container mb-5">
+      <h2 class="section-title">Task 1 — Responsive Layout (pure CSS media queries)</h2>
+      <p class="muted">Desktop has 3 columns, tablet has 2, and mobile has 1 (implemented without Bootstrap grid)</p>
+
+      <div class="pure-grid">
+        <div class="pure-box">Box 1</div>
+        <div class="pure-box">Box 2</div>
+        <div class="pure-box">Box 3</div>
+      </div>
+      <!-- Code note shown for defense -->
+      <pre class="mt-3 small code-note"><code>/* layout реализован в css/style.css через .pure-grid и media queries */</code></pre>
+    </section>
+
+    <!-- ====== Task 2 — Bootstrap Responsive Columns ====== -->
+    <section id="task2" class="container mb-5">
+      <h2 class="section-title">Task 2 — Bootstrap Responsive Columns</h2>
+      <p class="muted">Desktop: 3 equal columns (col-lg-4). Tablet: two in the first row and one in the second. Mobile: stacked.</p>
+
+      <div class="row gy-3">
+        <!-- Колонка 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="when-your-code-works-on-the-first-try-v0-iust6sown9m91.png.webp" class="card-img-top" alt="Meme 1">
+            <div class="card-body">
+              <h5 class="card-title">Meme 1: When Code Works</h5>
+              <p class="card-text">Post-irony</p>
+            </div>
+          </div>
+        </div>
+        <!-- Колонка 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <img src="be9ed226a90fa206f2ae44467262c0de.jpg" class="card-img-top" alt="Meme 2">
+            <div class="card-body">
+              <h5 class="card-title">Meme 2: HTML</h5>
+              <p class="card-text">HTML is not actually a programming language, but a markup language, which is why it stands out from the rest of the content in the image.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Колонка 3 -->
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card h-100">
+            <img src="77bbf958dead2dafeda20de272fe3c7d.jpg" class="card-img-top" alt="Meme 3">
+            <div class="card-body">
+              <h5 class="card-title">There is no Meme😔</h5>
+              <p class="card-text">I am tired</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Task 3 was implemented as navbar (see header) ====== -->
+
+    <!-- ====== Task 4 — Responsive Portfolio Page (combined) ====== -->
+    <section id="task4" class="container mb-5">
+      <h2 class="section-title">Task 4 — Responsive Portfolio Page</h2>
+
+      <div class="row g-4">
+        <!-- Left: Projects (uses Bootstrap grid) -->
+        <main class="col-12 col-lg-8">
+          <div class="row g-3">
+            <!-- card 1 -->
+            <div class="col-12 col-sm-6">
+              <article class="card project-card h-100">
+                <img src="2.png" class="card-img-top" alt="Work 1">
+                <div class="card-body">
+                  <h5 class="card-title">Work 1:Personal Profile Webpage</h5>
+                  <p class="card-text">This project is a simple HTML-based personal profile webpage that demonstrates the use of basic web technologies and layout structures.</p>
+                </div>
+              </article>
+            </div>
+            <!-- card 2 -->
+            <div class="col-12 col-sm-6">
+              <article class="card project-card h-100">
+                <img src="Picture3.png" class="card-img-top" alt="Work 2">
+                <div class="card-body">
+                  <h5 class="card-title">Work 2</h5>
+                  <p class="card-text">In this project, we created a website where we used buttons, hover effects, and tables. We also added design elements using CSS. Additionally, we designed the future version of our site for the midterm project using Figma.</p>
+                </div>
+              </article>
+            </div>
+            <!-- card 3 -->
+            <div class="col-12">
+              <article class="card project-card h-100">
+                <img src="Picture1.png" class="card-img-top" alt="Work 3">
+                <div class="card-body">
+                  <h5 class="card-title">Work 3:Advanced CSS ( Flexbox & Grid) </h5>
+                  <p class="card-text">This project demonstrates the use of Flexbox and CSS Grid to build a responsive eCommerce-style website and portfolio page. The work includes a navigation bar, product cards with hover effects, a sidebar with categories and filters, an image gallery of products, and a structured portfolio section with project descriptions. The layout combines modern design practices, clear structure, and interactivity (buttons, hover states, smooth scrolling, and a floating contact button). All styles were separated into external CSS files with detailed comments for clarity and maintainability.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+
+        <!-- Right: Sidebar -->
+        <aside id="contact" class="col-12 col-lg-4">
+          <div class="card sticky-sidebar">
+            <div class="card-body text-center">
+              <img src="1420fdb2c1b84a55bc9a61e3050b0fa5.jpg" alt="Avatar" class="rounded-circle mb-3 img-fluid" style="max-width:120px;">
+              <h5 class="mb-1">Issabek Suleimenov</h5>
+              <p class="small text-muted mb-2">Group: SE - 2433</p>
+              <p class="mb-3">Specialuty: Pyrhon, HTML, CSS, JavaScript, Bootstrap.</p>
+
+              <a href="mailto:isabeksuleimenov@bk.ru" class="btn btn-primary btn-sm w-100 mb-2">Write Me</a>
+
+              <hr>
+              <p class="small text-muted">Contacts:</p>
+              <ul class="list-unstyled small">
+                <li>Email: isabeksuleimenov@bk.ru</li>
+                <li>Тел: +7 771 186 5735</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="bg-white border-top py-4 mt-5">
+    <div class="container text-center small text-muted">
+      © COPYRIGHT 2025 E-Commerce | All Rights Reserved
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
